@@ -43,7 +43,7 @@ function RoleTable() {
 
   return (
     <div className="">
-      <div className="p-10 rounded-xl m-1 shadow-[0_55px_80px_-20px_rgba(255,255,255,0.3)] bg-white ">
+      <div className="p-10 rounded-xl m-1 shadow-[0_55px_80px_-20px_rgba(255,255,255,0.3)] bg-slate-400 ">
         <div className="flex w-full items-center justify-between  lg:px-16 sm:px-8 px-4 rounded-tl-2xl rounded-tr-2xl py-4 bg-black">
           <h2 className="text-3xl text-white font-bold">Role Management</h2>
           <button
