@@ -19,23 +19,6 @@ This project is a **User Management System** developed using **React.js**, desig
 ## How to Use the Project
 
 1. **Visit the Application**:
-   - Go to the website where the application is hosted. For example: [**https://your-project-link.com**].
-
-2. **Add Users**:
-   - Click the "Add User" button to open the user form. Fill out the user's **name**, **email**, **role**, and **profile picture** (upload from your computer). After completing the form, click "Save" to add the user.
-
-3. **Edit Users**:
-   - In the user table, click the "Edit" button next to any user. The form will pre-fill with the user's existing details, allowing you to modify their name, email, role, or profile picture. Save the changes once you're done.
-
-4. **Delete Users**:
-   - In the user table, click the "Delete" button next to any user to remove them from the system permanently.
-
-5. **Responsiveness**:
-   - The app is fully responsive, so it will adapt to any screen size. You can access and use the system easily on both desktop and mobile devices.
-
-## How to Use the Project
-
-1. **Visit the Application**:
    - Go to the website where the application is hosted. For example: [**https://your-project-link.com**](https://your-project-link.com).
 
 2. **Add Users**:
