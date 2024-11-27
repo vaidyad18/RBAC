@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import UserForm from "./UserForm";
-import UserProfile from "./UserProfile";
+
 
 function UserTable() {
   const [users, setUsers] = useState([]);
@@ -39,7 +39,7 @@ function UserTable() {
 
   return (
     <div className="">
-      <div className="p-10 rounded-xl m-1 shadow-2xl">
+      <div className="p-10 rounded-xl bg-white shadow-[0_55px_80px_-20px_rgba(255,255,255,0.3)] m-1 ">
         <div className="flex w-full items-center justify-between lg:px-16 sm:px-8 px-4 rounded-tl-2xl rounded-tr-2xl py-4 bg-black">
           <h2 className="text-3xl text-white font-bold">User Management</h2>
           <button
@@ -55,7 +55,6 @@ function UserTable() {
           <table className="">
             <thead className="w-full bg-blue-600 h-12">
               <tr>
-                <th className="w-20  text-white"></th>
                 <th className="w-96  text-white">Name</th>
                 <th className="w-80 text-white ">Email</th>
                 <th className="w-72 text-white ">Role</th>
@@ -75,37 +74,25 @@ function UserTable() {
                 >
                   <td
                     onClick={() => setShowProfile(true)}
-                    className=" cursor-pointer flex w-full justify-end items-center"
-                  >
-                    <img
-                      className=""
-                      src={user.avatar}
-                      alt="User Avatar"
-                      width="50"
-                      height="50"
-                    />
-                  </td>
-                  <td
-                    onClick={() => setShowProfile(true)}
-                    className="  cursor-pointer text-center text-lg"
+                    className="   text-center text-lg"
                   >
                     {user.name}
                   </td>
                   <td
                     onClick={() => setShowProfile(true)}
-                    className="  cursor-pointer text-center"
+                    className="   text-center"
                   >
                     {user.email}
                   </td>
                   <td
                     onClick={() => setShowProfile(true)}
-                    className=" cursor-pointer text-center text-lg"
+                    className="  text-center text-lg"
                   >
                     {user.role}
                   </td>
                   <td
                     onClick={() => setShowProfile(true)}
-                    className=" cursor-pointer  text-center"
+                    className="   text-center"
                   >
                     <div className="flex items-center justify-center">
                       <img
@@ -137,14 +124,6 @@ function UserTable() {
                       Delete
                     </button>
                   </td>
-                  {showProfile && (
-                    <UserProfile
-                      onClose={() => {
-                        setShowProfile(false);
-                      }}
-                      name={user.name}
-                    />
-                  )}
                 </tr>
               ))}
             </tbody>

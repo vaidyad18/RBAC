@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import RoleDesc from "./RoleDesc";
+
 
 function RoleTable() {
   const [roles, setRoles] = useState([]);
@@ -43,8 +43,8 @@ function RoleTable() {
 
   return (
     <div className="">
-      <div className="p-10 rounded-xl m-1 shadow-2xl">
-        <div className="flex w-full items-center justify-between lg:px-16 sm:px-8 px-4 rounded-tl-2xl rounded-tr-2xl py-4 bg-black">
+      <div className="p-10 rounded-xl m-1 shadow-[0_55px_80px_-20px_rgba(255,255,255,0.3)] bg-white ">
+        <div className="flex w-full items-center justify-between  lg:px-16 sm:px-8 px-4 rounded-tl-2xl rounded-tr-2xl py-4 bg-black">
           <h2 className="text-3xl text-white font-bold">Role Management</h2>
           <button
             className="bg-white hover:bg-gray-400 transition-all duration-500 font-semibold text-black pl-5 pr-2 py-2 text-lg rounded-full hover:scale-105"
@@ -82,9 +82,9 @@ function RoleTable() {
                       : "bg-gray-100 hover:bg-gray-300"
                   } h-12 `}
                 >
-                  <td onClick={()=>setShowDesc(true)} className="cursor-pointer text-center capitalize">{role.name}</td>
-                  <td onClick={()=>setShowDesc(true)} className="cursor-pointer text-center ">{role.desc}</td>
-                  <td onClick={()=>setShowDesc(true)} className="cursor-pointer text-center">
+                  <td onClick={()=>setShowDesc(true)} className=" text-center capitalize">{role.name}</td>
+                  <td onClick={()=>setShowDesc(true)} className="text-center ">{role.desc}</td>
+                  <td onClick={()=>setShowDesc(true)} className="text-center">
                     {role.permissions.join(", ")}
                   </td>
                   <td className="text-center">
@@ -121,14 +121,7 @@ function RoleTable() {
             error={error}
           />
         )}
-        {showDesc && (
-          <RoleDesc
-            onClose={() => {
-              setShowDesc(false);
-            }}
-            
-          />
-        )}
+        
       </div>
     </div>
   );
@@ -156,7 +149,7 @@ function RoleForm({ onClose, onSave, role, error }) {
     }
 
     onSave({ name,desc, permissions });
-    setFormError(""); // Clear form-specific error on successful submit
+    setFormError(""); 
   };
 
   return (
@@ -197,7 +190,7 @@ function RoleForm({ onClose, onSave, role, error }) {
           </div>
         </div>
 
-        {/* Error Display */}
+        
         {formError && (
           <div className="bg-red-500 text-white p-3 mb-4 rounded">
             <strong>Error:</strong> {formError}
