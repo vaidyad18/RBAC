@@ -44,7 +44,7 @@ function RoleTable() {
   return (
     <div className="">
       <div className="p-10 rounded-xl m-1 shadow-2xl">
-        <div className="flex w-full items-center justify-between px-16 rounded-tl-2xl rounded-tr-2xl py-4 bg-black">
+        <div className="flex w-full items-center justify-between lg:px-16 sm:px-8 px-4 rounded-tl-2xl rounded-tr-2xl py-4 bg-black">
           <h2 className="text-3xl text-white font-bold">Role Management</h2>
           <button
             className="bg-white hover:bg-gray-400 transition-all duration-500 font-semibold text-black pl-5 pr-2 py-2 text-lg rounded-full hover:scale-105"
@@ -65,7 +65,7 @@ function RoleTable() {
           <table className="">
             <thead className="w-full bg-blue-600 h-12">
               <tr>
-                <th className="w-[1000px] text-white ">Role Name</th>
+                <th className="w-[1000px] text-white px-10">Role Name</th>
                 <th className="w-1/4 text-white ">Role Description</th>
                 <th className="w-1/4 text-white ">Permissions</th>
                 <th className="w-1/4 text-white ">Actions</th>

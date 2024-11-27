@@ -8,6 +8,7 @@ function UserTable() {
   const [showForm, setShowForm] = useState(false);
   const [editingUser, setEditingUser] = useState(null);
   const [showProfile, setShowProfile] = useState(false);
+  
 
   useEffect(() => {
     const savedUsers = JSON.parse(localStorage.getItem("users")) || [];
@@ -39,7 +40,7 @@ function UserTable() {
   return (
     <div className="">
       <div className="p-10 rounded-xl m-1 shadow-2xl">
-        <div className="flex w-full items-center justify-between px-16 rounded-tl-2xl rounded-tr-2xl py-4 bg-black">
+        <div className="flex w-full items-center justify-between lg:px-16 sm:px-8 px-4 rounded-tl-2xl rounded-tr-2xl py-4 bg-black">
           <h2 className="text-3xl text-white font-bold">User Management</h2>
           <button
             className="bg-white hover:bg-gray-400 transition-all duration-500 font-semibold text-black pl-5 pr-3 py-2 text-lg rounded-full hover:scale-105"
@@ -54,9 +55,9 @@ function UserTable() {
           <table className="">
             <thead className="w-full bg-blue-600 h-12">
               <tr>
-                <th className="w-20 text-white"></th>
-                <th className="w-80 text-white">Name</th>
-                <th className="w-96 text-white ">Email</th>
+                <th className="w-20  text-white"></th>
+                <th className="w-96  text-white">Name</th>
+                <th className="w-80 text-white ">Email</th>
                 <th className="w-72 text-white ">Role</th>
                 <th className="w-64 text-white">Status</th>
                 <th className="w-72 text-white">Actions</th>
@@ -65,7 +66,6 @@ function UserTable() {
             <tbody>
               {users.map((user, index) => (
                 <tr
-                  
                   key={user.id}
                   className={`${
                     index % 2 === 0
@@ -73,11 +73,40 @@ function UserTable() {
                       : "bg-gray-100 hover:bg-gray-300"
                   } h-12`}
                 >
-                  <td onClick={()=>setShowProfile(true)} className=" cursor-pointer text-right">{user.avatar}</td>
-                  <td onClick={()=>setShowProfile(true)} className="  cursor-pointer text-center text-lg">{user.name}</td>
-                  <td onClick={()=>setShowProfile(true)} className="  cursor-pointer text-center">{user.email}</td>
-                  <td onClick={()=>setShowProfile(true)} className=" cursor-pointer text-center text-lg">{user.role}</td>
-                  <td onClick={()=>setShowProfile(true)} className=" cursor-pointer  text-center">
+                  <td
+                    onClick={() => setShowProfile(true)}
+                    className=" cursor-pointer flex w-full justify-end items-center"
+                  >
+                    <img
+                      className=""
+                      src={user.avatar}
+                      alt="User Avatar"
+                      width="50"
+                      height="50"
+                    />
+                  </td>
+                  <td
+                    onClick={() => setShowProfile(true)}
+                    className="  cursor-pointer text-center text-lg"
+                  >
+                    {user.name}
+                  </td>
+                  <td
+                    onClick={() => setShowProfile(true)}
+                    className="  cursor-pointer text-center"
+                  >
+                    {user.email}
+                  </td>
+                  <td
+                    onClick={() => setShowProfile(true)}
+                    className=" cursor-pointer text-center text-lg"
+                  >
+                    {user.role}
+                  </td>
+                  <td
+                    onClick={() => setShowProfile(true)}
+                    className=" cursor-pointer  text-center"
+                  >
                     <div className="flex items-center justify-center">
                       <img
                         className="w-4 mr-1 h-4"
@@ -108,6 +137,14 @@ function UserTable() {
                       Delete
                     </button>
                   </td>
+                  {showProfile && (
+                    <UserProfile
+                      onClose={() => {
+                        setShowProfile(false);
+                      }}
+                      name={user.name}
+                    />
+                  )}
                 </tr>
               ))}
             </tbody>
@@ -123,15 +160,6 @@ function UserTable() {
             onSave={handleSaveUser}
             roles={roles}
             user={editingUser}
-          />
-        )}
-
-        {showProfile && (
-          <UserProfile
-            onClose={() => {
-              setShowProfile(false);
-            }}
-            
           />
         )}
       </div>

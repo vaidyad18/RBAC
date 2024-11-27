@@ -38,13 +38,12 @@ function UserForm({ onClose, onSave, roles, user }) {
 
   const HandleImageChange = (event) => {
     const file = event.target.value;
-    
     setImage(event.target.files[0]);
   };
 
   const HandleAvatarChange = (event) => {
     const file = event.target.value;
-    setAvatar(event.target.files[0]);
+    setImage(event.target.files[0]);
   };
 
   return (
@@ -60,7 +59,7 @@ function UserForm({ onClose, onSave, roles, user }) {
           {image ? (
             <img
               value={avatar}
-              onChange={(e) => setImage(e.target.value)}
+              onChange={(e) => setAvatar(e.target.value)}
               className="w-40 object-cover h-40 rounded-full mb-2"
               src={URL.createObjectURL(image)}
               alt=""
@@ -68,7 +67,7 @@ function UserForm({ onClose, onSave, roles, user }) {
           ) : (
             <img
               value={avatar}
-              onChange={(e) => setImage(e.target.value)}
+              onChange={(e) => setAvatar(e.target.value)}
               className="w-40 rounded-full mb-2"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/2048px-Circle-icons-profile.svg.png"
               alt=""

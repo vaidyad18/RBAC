@@ -2,7 +2,7 @@ import { useState } from "react";
 import React from "react";
 import UserForm from "./UserForm";
 
-function UserProfile({ onClose }) {
+function UserProfile({ onClose },props) {
   return (
     <div className="absolute top-0 bg-opacity-60 shadow-2xl bg-black left-0 w-full h-full flex justify-center items-center">
       <div className="bg-white  rounded-xl flex flex-col items-center justify-center shadow-lg px-5 py-4 w-full max-w-lg">
@@ -26,7 +26,7 @@ function UserProfile({ onClose }) {
           <div className="flex flex-col justify-center ml-5">
             <div className="mb-2">
               <p className="text-xs text-gray-500">Name : </p>
-              <p className="font-semibold text-2xl ">Vaidya Dandriyal</p>
+              <p className="font-semibold text-2xl ">{props.name}</p>
             </div>
             <div className="mb-2">
               <p className="text-xs text-gray-500">Email Address : </p>

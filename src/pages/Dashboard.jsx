@@ -32,7 +32,7 @@ function Dashboard() {
         </button>
 
         <button
-          className={`mx-2 px-20 font-semibold ${
+          className={`mx-2 md:px-20 px-5 font-semibold ${
             activeTab === "roles"
               ? " text-[#ffa84b]"
               : " text-white transition-all duration-300 hover:text-[#ffa84b]"
