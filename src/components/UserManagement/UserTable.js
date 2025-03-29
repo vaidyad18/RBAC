@@ -39,7 +39,7 @@ function UserTable() {
 
   return (
     <div className="">
-      <div className="p-10 rounded-xl bg-white shadow-[0_55px_80px_-20px_rgba(37,99,255,0.5)] m-1 ">
+      <div className="p-10 rounded-xl bg-gray-200 shadow-3xl shadow-black m-1 ">
         <div className="flex w-full items-center justify-between lg:px-16 sm:px-8 px-4 rounded-tl-2xl rounded-tr-2xl py-4 bg-black">
           <h2 className="text-3xl text-white font-bold">User Management</h2>
           <button
